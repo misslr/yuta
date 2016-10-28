@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, minimal-ui">
+    <title>Title</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        .search{
+            height: 43px;overflow: hidden;background: #0080ed;line-height: 43px;
+        }
+        .search img{
+            float: left;width: 13%;height: 100%;
+        }
+        .search input{
+            float: left;width: 75%;height: 28px;line-height: 28px;margin-top: 8px;background: #0080ed;border: 1px solid #02b5ff;
+            padding-left: 32px;background: url("images/search.png") 12px 7px no-repeat;background-size: 13px 13px;
+            border-radius: 3px;font-size: 14px;color: #5ea4f3;
+        }
+        .banner{
+            height: auto;
+        }
+        .banner img{
+            width: 100%;height: 100%;display: block;
+        }
+        .nav{
+            margin-top: 15px;overflow: hidden;border-bottom: 1px solid #eeeeee;
+        }
+        .nav a{
+            float: left;width: 25%;margin-bottom: 15px;text-align: center;
+        }
+        .nav img{
+            height: auto;width: 45px;
+        }
+        .nav span{
+            color: #666666;font-size: 12px;display: block;
+        }
+        .new{
+            padding:10px 0 6px 0;border-bottom: 12px solid #eeeeee;overflow: hidden;
+        }
+        .new1{
+            float: left;border-right: 1px solid #eeeeee;line-height: 27px;font-size: 12px;color: #666666;
+            width: 54px;padding-left: 12px;padding-right: 10px;
+        }
+        .new1 span{
+            float:right; background: #0080ed;color: #fff;
+            width: 30px;height: 15px;text-align: center;line-height: 15px;margin-top: 6px;
+        }
+        .new2{
+            float: left;
+        }
+        .new2 p{
+            line-height: 13px;color: #999999;font-size: 11px;padding-left: 20px;
+            background: url("images/star.jpg") 9px 4px no-repeat;background-size: 12px 12px;
+        }
+        .new2 sup{
+            color: #ff4362;
+        }
+        .time{
+            height: 27px;line-height: 27px;overflow: hidden;padding: 0 10px;border-bottom: 1px solid #eeeeee;
+        }
+        .time h3{
+            font-size: 14px;line-height: 27px;color: #ff375c;
+            background: url("images/time.jpg") 0px 6px no-repeat;
+            background-size: 14px 14px;float: left;padding-left: 19px;
+            margin-right: 7px;
+        }
+        .time div{
+            float: left;height: 100%;
+        }
+        .time div span{
+            width: 14px;height: 12px;line-height: 12px;float: left;background: #000000;
+            border: 1px solid #5b5b5b;font-size: 14px;margin-top: 7px;color: #fff;
+        }
+        .time .spe{
+            float: left;margin-top: 8px;width: 6px;text-align: center;background: none;border: none;color: #000;
+        }
+        .time h4{
+            font-size: 10px;float: right;background: url("images/pinkmore.jpg") right 10px no-repeat;
+            color: #ff7992;padding-right: 14px;background-size: 9px 9px;line-height: 27px;
+        }
+        .over{
+            width: 100%;height: auto;overflow: scroll;padding-top: 12px;padding-bottom: 7px;
+        }
+        .imlist{
+            height: auto;overflow: hidden;width: 945px;
+        }
+        .imlist li{
+            float: left;width: 104px;height: 100%;text-align: center;border-right: 1px solid #cccccc;
+        }
+        .imlist img{
+            width: 77px;height: auto;
+        }
+        .imlist strong{
+            font-size: 13px;color: #ff375c;
+        }
+        .imlist span{
+            text-decoration: line-through;color: #ccc;font-size: 10px;
+        }
+        .a1,.a2,.a3,.a4{
+            height: 33px;
+        }
+        .a1 img,.a2 img,.a3 img,.a4 img{
+            display: block;width: 100%;height: 100%;
+        }
+        .con1,.con2{
+            padding: 13px 0 13px 9px;overflow: hidden;border-bottom: 1px solid #cccccc;
+        }
+        .con1 div,.con2 div{
+            float: left;width: 48.75%;
+        }
+        .con1 div img,.con2 div img{
+            float: left;width: 75px;height: auto;margin-right: 7px;
+        }
+        .con1 div dl,.con2 div dl{
+            width: 80px;float: left;font-size: 10px;
+        }
+        .con1 div dt{
+            color: #666;
+        }
+        .con2 div dt{
+            color: #808080;margin-bottom: 9px;margin-top: 9px;
+        }
+        .con1 .dd1 span{
+            color: #ff375c;
+        }
+        .con1 .dd1 em{
+            color: #999;
+        }
+        .con1 .dd2 span{
+            color: #ff868c;
+        }
+        .con1 .dd2 em{
+            color: #cccccc;
+        }
+        .con1 .dd3 span{
+            text-decoration: line-through;color: #cccccc;font-size: 10px;
+        }
+        .con2 .con2_dd1{
+            color: #f2bb00;font-size: 12px;
+        }
+        .con2 .con2_dd2{
+            color: #cccccc;
+        }
+        .con2 .con2_dd3{
+            color: #f1029b;font-size: 12px;
+        }
+        .b1{
+            height: 50px;
+        }
+        .b1 img,.b2 img{
+            display: block;width: 100%;height: 100%;
+        }
+        .b2{
+            height: 55px;
+        }
+        .advert{
+            height: 88px;overflow: hidden;
+        }
+        .ad1{
+            width: 20.8%;line-height: 88px;color: #fff;text-align: center;background: #f0d79e;float: left;
+        }
+        .ad3{
+            width: 20.8%;line-height: 88px;color: #fff;text-align: center;background: #f992d4;float: left;
+        }
+        .ad2{
+            width: 79.2%;height: 100%;float: right;
+        }
+        .ad2 li{
+            float: left;width: 32.9%;height: 45px;
+            border-bottom: 1px dotted #cccccc;border-right: 1px dotted #cccccc;
+        }
+        .ad2 img{
+            width: 100%;height: 100%;
+        }
+        .last{
+            background: #eeeeee;
+        }
+        .like{
+            overflow: hidden;margin: 0 auto;width: 41%;height: 37px;line-height: 37px;
+        }
+        .like span{
+            float: left;border-bottom: 1px solid #dcdcdc;width: 33px;margin-top: 19px;
+        }
+        .like img{
+            float: left;margin-left: 9px;margin-right: 6px;width: 13px;height: 13px;margin-top: 13px;
+        }
+        .like h4{
+            color: #666666;font-size: 13px;margin-right: 7px;float: left;
+        }
+        .likecon{
+            width: 94.6%;margin: 0 auto;overflow: hidden;
+        }
+        .likecon .div1{
+            width: 48.6%;float: left;background: #fff;margin-bottom: 12px;
+        }
+        .likecon .div2{
+            width: 48.6%;float: right;background: #fff;margin-bottom: 12px;
+        }
+        .div1 img,.div2 img{
+            width: 100%;height: 115px;margin-bottom: 11px;
+        }
+        .div1 h3,.div2 h3{
+            font-size: 12px;color: #989898;padding: 0 12px;height: 40px;font-weight: normal;
+        }
+        .div1 strong,.div2 strong{
+            font-size: 12px;color: #0080ed;margin-left: 12px;
+        }
+        .div1 span,.div2 span{
+            color: #dedede;font-size: 10px;margin-right: 9px;
+        }
+        .foot{
+            height: 49px;border-top: 1px solid #cccccc;overflow: hidden;position: fixed;bottom: 0;left: 0;width: 100%;background: #fff;
+        }
+        .foot a{
+            width: 25%;text-align: center;height: 100%;float: left;
+        }
+        .foot img{
+            width: 22px;height: auto;margin-top: 5px;
+        }
+        .foot span{
+            display: block;font-size: 11px;color: #666666;
+        }
+        .kong{
+            height: 49px;
+        }
+        .foot .foot_spe{
+            color: #007de4;
+        }
+    </style>
+</head>
+<body>
+<div class="search">
+    <img src="images/logo.jpg" alt="">
+    <input type="text" value="佰利联BLR-896 ">
+</div>
+<div class="banner">
+    <img src="images/banner.jpg" alt="">
+</div>
+<div class="nav">
+    <a href="#">
+        <img src="images/shop.jpg" alt="">
+        <span>多多超市</span>
+    </a>
+    <a href="#">
+        <img src="images/more.jpg" alt="">
+        <span>多多撮合</span>
+    </a>
+    <a href="#">
+        <img src="images/jicai.jpg" alt="">
+        <span>多多集采</span>
+    </a>
+    <a href="#">
+        <img src="images/jinpai.jpg" alt="">
+        <span>多多竞拍</span>
+    </a>
+    <a href="#">
+        <img src="images/wuliu.jpg" alt="">
+        <span>多多物流</span>
+    </a>
+    <a href="#">
+        <img src="images/jingrong.jpg" alt="">
+        <span>多多金融</span>
+    </a>
+    <a href="#">
+        <img src="images/college.jpg" alt="">
+        <span>多多学院</span>
+    </a>
+    <a href="#">
+        <img src="images/center.jpg" alt="">
+        <span>试用中心</span>
+    </a>
+</div>
+<div class="new">
+    <div class="new1">
+        多多
+        <span>快报</span>
+    </div>
+    <div class="new2">
+        <p>《防静电地坪涂料通用规范》标准启动修订工作<sup>new</sup></p>
+        <p> &nbsp;&nbsp;分析：4月钛白粉市场行情 <sup>new</sup></p>
+    </div>
+</div>
+<div class="time">
+    <h3>限时特惠</h3>
+    <div>
+        <span>01</span>
+        <span class="spe">:</span>
+        <span>01</span>
+        <span class="spe">:</span>
+        <span>59</span>
+    </div>
+    <h4>更多优惠等你来</h4>
+</div>
+<div class="over">
+    <ul class="imlist">
+        <li>
+            <img src="images/tu1.jpg" alt="">
+            <strong>￥8000</strong>
+            <span>￥9000</span>
+        </li>
+        <li>
+            <img src="images/tu2.jpg" alt="">
+            <strong>￥850</strong>
+            <span>￥900</span>
+        </li>
+        <li>
+            <img src="images/tu3.jpg" alt="">
+            <strong>￥1120</strong>
+            <span>￥1420</span>
+        </li>
+        <li>
+            <img src="images/tu1.jpg" alt="">
+            <strong>￥8000</strong>
+            <span>￥9000</span>
+        </li>
+        <li>
+            <img src="images/tu2.jpg" alt="">
+            <strong>￥850</strong>
+            <span>￥900</span>
+        </li>
+        <li>
+            <img src="images/tu3.jpg" alt="">
+            <strong>￥1120</strong>
+            <span>￥1420</span>
+        </li>
+        <li>
+            <img src="images/tu1.jpg" alt="">
+            <strong>￥8000</strong>
+            <span>￥9000</span>
+        </li>
+        <li>
+            <img src="images/tu2.jpg" alt="">
+            <strong>￥850</strong>
+            <span>￥900</span>
+        </li>
+        <li>
+            <img src="images/tu3.jpg" alt="">
+            <strong>￥1120</strong>
+            <span>￥1420</span>
+        </li>
+    </ul>
+</div>
+
+<div class="a1">
+    <img src="images/a1.jpg" alt="">
+</div>
+<div class="con1">
+    <div>
+        <img src="images/a11.jpg" alt="">
+        <dl>
+            <dt>山东东佳R2377 金红石型钛白...</dt>
+            <dd class="dd1">
+                <span>01</span>
+                <em>天</em>
+                <span>06:</span>
+                <span>15:</span>
+                <span>26:</span>
+            </dd>
+            <dd class="dd2">
+                <span>￥13000</span>
+                <em>/吨</em>
+            </dd>
+            <dd class="dd3">
+                <span>￥13950/吨</span>
+            </dd>
+        </dl>
+    </div>
+    <div>
+        <img src="images/a12.jpg" alt="">
+        <dl>
+            <dt>山东东佳R2377 金红石型钛白...</dt>
+            <dd class="dd1">
+                <span>01</span>
+                <em>天</em>
+                <span>06:</span>
+                <span>15:</span>
+                <span>26:</span>
+            </dd>
+            <dd class="dd2">
+                <span>￥13000</span>
+                <em>/吨</em>
+            </dd>
+            <dd class="dd3">
+                <span>￥13950/吨</span>
+            </dd>
+        </dl>
+    </div>
+</div>
+<div class="con1">
+    <div>
+        <img src="images/a12.jpg" alt="">
+        <dl>
+            <dt>山东东佳R2377 金红石型钛白...</dt>
+            <dd class="dd1">
+                <span>01</span>
+                <em>天</em>
+                <span>06:</span>
+                <span>15:</span>
+                <span>26:</span>
+            </dd>
+            <dd class="dd2">
+                <span>￥13000</span>
+                <em>/吨</em>
+            </dd>
+            <dd class="dd3">
+                <span>￥13950/吨</span>
+            </dd>
+        </dl>
+    </div>
+    <div>
+        <img src="images/a13.jpg" alt="">
+        <dl>
+            <dt>山东东佳R2377 金红石型钛白...</dt>
+            <dd class="dd1">
+                <span>01</span>
+                <em>天</em>
+                <span>06:</span>
+                <span>15:</span>
+                <span>26:</span>
+            </dd>
+            <dd class="dd2">
+                <span>￥13000</span>
+                <em>/吨</em>
+            </dd>
+            <dd class="dd3">
+                <span>￥13950/吨</span>
+            </dd>
+        </dl>
+    </div>
+</div>
+<div class="b1">
+    <img src="images/b1.jpg" alt="">
+</div>
+<div class="a2">
+    <img src="images/a2.jpg" alt="">
+</div>
+<div class="con1">
+    <div>
+        <img src="images/a11.jpg" alt="">
+        <dl>
+            <dt>山东东佳R2377 金红石型钛白...</dt>
+            <dd class="dd1">
+                <span>01</span>
+                <em>天</em>
+                <span>06:</span>
+                <span>15:</span>
+                <span>26:</span>
+            </dd>
+            <dd class="dd2">
+                <span>￥13000</span>
+                <em>/吨</em>
+            </dd>
+            <dd class="dd3">
+                <span>￥13950/吨</span>
+            </dd>
+        </dl>
+    </div>
+    <div>
+        <img src="images/a12.jpg" alt="">
+        <dl>
+            <dt>山东东佳R2377 金红石型钛白...</dt>
+            <dd class="dd1">
+                <span>01</span>
+                <em>天</em>
+                <span>06:</span>
+                <span>15:</span>
+                <span>26:</span>
+            </dd>
+            <dd class="dd2">
+                <span>￥13000</span>
+                <em>/吨</em>
+            </dd>
+            <dd class="dd3">
+                <span>￥13950/吨</span>
+            </dd>
+        </dl>
+    </div>
+</div>
+<div class="con1">
+    <div>
+        <img src="images/a12.jpg" alt="">
+        <dl>
+            <dt>山东东佳R2377 金红石型钛白...</dt>
+            <dd class="dd1">
+                <span>01</span>
+                <em>天</em>
+                <span>06:</span>
+                <span>15:</span>
+                <span>26:</span>
+            </dd>
+            <dd class="dd2">
+                <span>￥13000</span>
+                <em>/吨</em>
+            </dd>
+            <dd class="dd3">
+                <span>￥13950/吨</span>
+            </dd>
+        </dl>
+    </div>
+    <div>
+        <img src="images/a13.jpg" alt="">
+        <dl>
+            <dt>山东东佳R2377 金红石型钛白...</dt>
+            <dd class="dd1">
+                <span>01</span>
+                <em>天</em>
+                <span>06:</span>
+                <span>15:</span>
+                <span>26:</span>
+            </dd>
+            <dd class="dd2">
+                <span>￥13000</span>
+                <em>/吨</em>
+            </dd>
+            <dd class="dd3">
+                <span>￥13950/吨</span>
+            </dd>
+        </dl>
+    </div>
+</div>
+<div class="b2">
+    <img src="images/b2.jpg" alt="">
+</div>
+<div class="a3">
+    <img src="images/a3.jpg" alt="">
+</div>
+<div class="con2">
+    <div>
+        <img src="images/a14.jpg" alt="">
+        <dl>
+            <dt>山东东佳R2377 金红石型钛白...</dt>
+            <dd class="con2_dd1">￥800</dd>
+            <dd class="con2_dd2">￥910</dd>
+        </dl>
+    </div>
+    <div>
+        <img src="images/a15.jpg" alt="">
+        <dl>
+            <dt>山东东佳R2377 金红石型钛白...</dt>
+            <dd class="con2_dd1">￥800</dd>
+            <dd class="con2_dd2">￥910</dd>
+        </dl>
+    </div>
+</div>
+<div class="con2">
+    <div>
+        <img src="images/a15.jpg" alt="">
+        <dl>
+            <dt>山东东佳R2377 金红石型钛白...</dt>
+            <dd class="con2_dd1">￥800</dd>
+            <dd class="con2_dd2">￥910</dd>
+        </dl>
+    </div>
+    <div>
+        <img src="images/a14.jpg" alt="">
+        <dl>
+            <dt>山东东佳R2377 金红石型钛白...</dt>
+            <dd class="con2_dd1">￥800</dd>
+            <dd class="con2_dd2">￥910</dd>
+        </dl>
+    </div>
+</div>
+<div class="con2">
+    <div>
+        <img src="images/a14.jpg" alt="">
+        <dl>
+            <dt>山东东佳R2377 金红石型钛白...</dt>
+            <dd class="con2_dd1">￥800</dd>
+            <dd class="con2_dd2">￥910</dd>
+        </dl>
+    </div>
+    <div>
+        <img src="images/a15.jpg" alt="">
+        <dl>
+            <dt>山东东佳R2377 金红石型钛白...</dt>
+            <dd class="con2_dd1">￥800</dd>
+            <dd class="con2_dd2">￥910</dd>
+        </dl>
+    </div>
+</div>
+<div class="advert">
+    <div class="ad1">品牌专区</div>
+    <ul class="ad2">
+        <li>
+            <img src="images/ad1.jpg" alt="">
+        </li>
+        <li>
+            <img src="images/ad2.jpg" alt="">
+        </li>
+        <li>
+            <img src="images/ad1.jpg" alt="">
+        </li>
+        <li>
+            <img src="images/ad2.jpg" alt="">
+        </li>
+        <li>
+            <img src="images/ad1.jpg" alt="">
+        </li>
+        <li>
+            <img src="images/ad2.jpg" alt="">
+        </li>
+    </ul>
+</div>
+<div class="a4">
+    <img src="images/a4.jpg" alt="">
+</div>
+<div class="con2">
+    <div>
+        <img src="images/a16.jpg" alt="">
+        <dl>
+            <dt>山东东佳R2377 金红石型钛白...</dt>
+            <dd class="con2_dd3">￥800</dd>
+            <dd class="con2_dd2">￥910</dd>
+        </dl>
+    </div>
+    <div>
+        <img src="images/a17.jpg" alt="">
+        <dl>
+            <dt>山东东佳R2377 金红石型钛白...</dt>
+            <dd class="con2_dd3">￥800</dd>
+            <dd class="con2_dd2">￥910</dd>
+        </dl>
+    </div>
+</div>
+<div class="con2">
+    <div>
+        <img src="images/a17.jpg" alt="">
+        <dl>
+            <dt>山东东佳R2377 金红石型钛白...</dt>
+            <dd class="con2_dd3">￥800</dd>
+            <dd class="con2_dd2">￥910</dd>
+        </dl>
+    </div>
+    <div>
+        <img src="images/a16.jpg" alt="">
+        <dl>
+            <dt>山东东佳R2377 金红石型钛白...</dt>
+            <dd class="con2_dd3">￥800</dd>
+            <dd class="con2_dd2">￥910</dd>
+        </dl>
+    </div>
+</div>
+<div class="con2">
+    <div>
+        <img src="images/a16.jpg" alt="">
+        <dl>
+            <dt>山东东佳R2377 金红石型钛白...</dt>
+            <dd class="con2_dd3">￥800</dd>
+            <dd class="con2_dd2">￥910</dd>
+        </dl>
+    </div>
+    <div>
+        <img src="images/a17.jpg" alt="">
+        <dl>
+            <dt>山东东佳R2377 金红石型钛白...</dt>
+            <dd class="con2_dd3">￥800</dd>
+            <dd class="con2_dd2">￥910</dd>
+        </dl>
+    </div>
+</div>
+<div class="advert">
+    <div class="ad3">品牌专区</div>
+    <ul class="ad2">
+        <li>
+            <img src="images/ad1.jpg" alt="">
+        </li>
+        <li>
+            <img src="images/ad2.jpg" alt="">
+        </li>
+        <li>
+            <img src="images/ad1.jpg" alt="">
+        </li>
+        <li>
+            <img src="images/ad2.jpg" alt="">
+        </li>
+        <li>
+            <img src="images/ad1.jpg" alt="">
+        </li>
+        <li>
+            <img src="images/ad2.jpg" alt="">
+        </li>
+    </ul>
+</div>
+<div class="last">
+    <div class="like">
+        <span></span>
+        <img src="images/like.jpg" alt="">
+        <h4>猜你喜欢</h4>
+        <span></span>
+    </div>
+    <div class="likecon">
+        <div class="div1">
+            <img src="images/like1.jpg" alt="">
+            <h3>澳丽丝3D原生态内墙乳胶漆</h3>
+            <strong>￥8000</strong>
+            <span>$9000</span>
+        </div>
+        <div class="div2">
+            <img src="images/like2.jpg" alt="">
+            <h3>晨阳水漆 多功能乳胶漆家具 翻新木器地板修补DIY非...</h3>
+            <strong>￥801</strong>
+            <span>$908</span>
+        </div>
+        <div class="div2">
+            <img src="images/like2.jpg" alt="">
+            <h3>晨阳水漆 多功能乳胶漆家具 翻新木器地板修补DIY非...</h3>
+            <strong>￥801</strong>
+            <span>$908</span>
+        </div>
+        <div class="div1">
+            <img src="images/like1.jpg" alt="">
+            <h3>澳丽丝3D原生态内墙乳胶漆</h3>
+            <strong>￥8000</strong>
+            <span>$9000</span>
+        </div>
+        <div class="div1">
+            <img src="images/like1.jpg" alt="">
+            <h3>澳丽丝3D原生态内墙乳胶漆</h3>
+            <strong>￥8000</strong>
+            <span>$9000</span>
+        </div>
+        <div class="div2">
+            <img src="images/like2.jpg" alt="">
+            <h3>晨阳水漆 多功能乳胶漆家具 翻新木器地板修补DIY非...</h3>
+            <strong>￥801</strong>
+            <span>$908</span>
+        </div>
+    </div>
+</div>
+<div class="kong"></div>
+<div class="foot">
+    <a href="#">
+        <img src="images/home.jpg" alt="">
+        <span class="foot_spe">首页</span>
+    </a>
+    <a href="#">
+        <img src="images/fenlei.jpg" alt="">
+        <span>分类</span>
+    </a>
+    <a href="#">
+        <img src="images/car.jpg" alt="">
+        <span>分类</span>
+    </a>
+    <a href="#">
+        <img src="images/mine.jpg" alt="">
+        <span>我的</span>
+    </a>
+</div>
+
+</body>
+</html>
